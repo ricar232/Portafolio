@@ -672,7 +672,7 @@
             transition: all 0.3s ease;
             margin-bottom: 15px; 
         }
-        .skill-item { /* Ensure skill-item still gets its padding for the marker */
+        .skill-item { 
              padding-left: 30px;
         }
         .skill-item:last-child, .info-item:last-child {
@@ -861,16 +861,37 @@
 
         .tools-intro { font-family: 'Rajdhani', sans-serif; font-size: 18px; color: var(--dark-text); line-height: 1.8; margin-bottom: 50px; max-width: 800px; border-left: 3px solid var(--secondary-color); padding-left: 20px; }
         .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 35px; }
-        .tool-card { background-color: var(--card-bg); padding: 35px; border-radius: 10px; border: 1px solid rgba(0,247,255,0.15); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: flex; flex-direction: column; position: relative; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .tool-card { 
+            background-color: var(--card-bg); padding: 35px; border-radius: 10px; 
+            border: 1px solid rgba(0,247,255,0.15); 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            display: flex; flex-direction: column; position: relative; overflow: hidden; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+            align-items: center; /* Center content of tool card */
+            text-align: center;   /* Center text within elements */
+        }
         .tool-card:hover { transform: translateY(-12px) scale(1.02); border-color: var(--secondary-color); box-shadow: 0 12px 35px rgba(0, 247, 255, 0.25); }
         .tool-card::before { content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--secondary-color); transform: scaleY(0); transform-origin: bottom; transition: transform 0.4s ease .1s; box-shadow: 0 0 8px var(--secondary-color); } 
         .tool-card:hover::before { transform: scaleY(1); transform-origin: top; }
         .tool-title { font-family: 'Orbitron', sans-serif; font-size: 22px; margin-bottom: 18px; color: var(--text-color); text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; }
         .tool-card:hover .tool-title { color: var(--secondary-color); text-shadow: 0 0 5px var(--secondary-color); }
-        .tool-description { font-family: 'Rajdhani', sans-serif; font-size: 16px; color: var(--dark-text); line-height: 1.6; flex-grow: 1; transition: all 0.3s ease; }
+        .tool-description { font-family: 'Rajdhani', sans-serif; font-size: 16px; color: var(--dark-text); line-height: 1.6; flex-grow: 1; transition: all 0.3s ease; margin-bottom: 20px; /* Space before tag */ }
         .tool-card:hover .tool-description { color: var(--text-color); }
-        .tool-tag { margin-top: 25px; font-family: 'Rajdhani', sans-serif; font-size: 14px; color: var(--secondary-color); padding: 6px 12px; background: rgba(0, 247, 255, 0.1); border-radius: 20px; align-self: flex-start; transition: all 0.3s ease; font-weight: 600; }
-        .tool-card:hover .tool-tag { background: var(--secondary-color); color: var(--primary-color); box-shadow: 0 0 10px var(--secondary-color); }
+        .tool-tag { /* MODIFIED */
+            margin-top: auto; /* Pushes to bottom if card has varying content height, or use fixed margin */
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 15px; 
+            font-weight: 600; 
+            color: var(--secondary-color); 
+            transition: color 0.3s ease, transform 0.3s ease; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px;
+            padding: 5px 0; /* Minimal vertical padding */
+        }
+        .tool-card:hover .tool-tag {
+            color: var(--accent-color); 
+            transform: scale(1.05); 
+        }
 
         .threat-map-intro { font-family: 'Rajdhani', sans-serif; font-size: 18px; color: var(--dark-text); line-height: 1.8; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; text-align: center; }
         .threat-map-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border: 2px solid var(--secondary-color); border-radius: 8px; box-shadow: 0 0 25px var(--glow-color); background-color: #000; }
@@ -995,7 +1016,7 @@
             .contact-item { padding: 15px 25px; } 
             .contact-title { font-size: 36px; }
             .profile-area {
-                margin-bottom: 15px; /* Increased slightly for tech-box clearance */
+                margin-bottom: 15px; 
             }
             .profile-image { 
                 width: 200px; 
@@ -1077,27 +1098,27 @@
                     <h3 class="subsection-title">Google Certifications</h3>
                     <ul class="info-list certification-list">
                         <li class="info-item" data-aos="fade-up" data-aos-delay="200">
-                            <a href="/01.pdf" target="_blank" rel="noopener noreferrer" class="certificate-link"> <!-- Example Path -->
+                            <a href="certificates/01.pdf" target="_blank" rel="noopener noreferrer" class="certificate-link"> 
                                 <i class="fas fa-file-pdf certificate-icon"></i> Google Foundations of Cybersecurity
                             </a>
                         </li>
                         <li class="info-item" data-aos="fade-up" data-aos-delay="250">
-                            <a href="/02.pdf" target="_blank" rel="noopener noreferrer" class="certificate-link"> <!-- Example Path -->
+                            <a href="certificates/02.pdf" target="_blank" rel="noopener noreferrer" class="certificate-link"> 
                                 <i class="fas fa-file-pdf certificate-icon"></i> Google Play It Safe: Manage Security Risks
                             </a>
                         </li>
                         <li class="info-item" data-aos="fade-up" data-aos-delay="300">
-                            <a href="/03.pdf" target="_blank" rel="noopener noreferrer" class="certificate-link"> <!-- Example Path -->
+                            <a href="certificates/03.pdf" target="_blank" rel="noopener noreferrer" class="certificate-link"> 
                                 <i class="fas fa-file-pdf certificate-icon"></i> Google Connect and Protect: Networks and Network Security
                             </a>
                         </li>
                         <li class="info-item" data-aos="fade-up" data-aos-delay="350">
-                            <a href="/04.pdf" target="_blank" rel="noopener noreferrer" class="certificate-link"> <!-- Example Path -->
+                            <a href="certificates/04.pdf" target="_blank" rel="noopener noreferrer" class="certificate-link"> 
                                 <i class="fas fa-file-pdf certificate-icon"></i> Google Tools of the Trade: Linux and SQL
                             </a>
                         </li>
                         <li class="info-item" data-aos="fade-up" data-aos-delay="400">
-                            <a href="/05.pdf" target="_blank" rel="noopener noreferrer" class="certificate-link"> <!-- Example Path -->
+                            <a href="certificates/05.pdf" target="_blank" rel="noopener noreferrer" class="certificate-link"> 
                                 <i class="fas fa-file-pdf certificate-icon"></i> Google Assets, Threats, and Vulnerabilities
                             </a>
                         </li>
@@ -1332,7 +1353,7 @@
             </div>
             <p class="threat-map-intro" data-aos="fade-up">
                 Witness a visualization of cyberthreats detected across the globe in near real-time. This map illustrates the dynamic nature of the digital threat landscape.
-                <br><small>(ThreaMap. Data is illustrative.)</small>
+                <br><small>(Powered by CheckPoint ThreatCloud. Data is illustrative.)</small>
             </p>
             <div class="threat-map-container" data-aos="zoom-in-up" data-aos-delay="200">
                 <iframe 
@@ -1341,7 +1362,7 @@
                     height="100%" 
                     frameborder="0"
                     allow="autoplay; fullscreen"
-                    title="Kaspersky Cyberthreat Map">
+                    title="CheckPoint Threat Map">
                 </iframe>
             </div>
         </div>
@@ -1371,7 +1392,7 @@
         <div class="container">
             <div class="social-links">
                 <a href="#" class="social-link" aria-label="LinkedIn" data-aos="fade-up" data-aos-delay="100"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-link" aria-label="GitHub" data-aos="fade-up" data-aos-delay="200"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/ricar232" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub" data-aos="fade-up" data-aos-delay="200"><i class="fab fa-github"></i></a>
                 <a href="#" class="social-link" aria-label="Twitter" data-aos="fade-up" data-aos-delay="300"><i class="fab fa-twitter"></i></a>
                 <a href="#" class="social-link" aria-label="Website" data-aos="fade-up" data-aos-delay="400"><i class="fas fa-globe"></i></a>
             </div>
